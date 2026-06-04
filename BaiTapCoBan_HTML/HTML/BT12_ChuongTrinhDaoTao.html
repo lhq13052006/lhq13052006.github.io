@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>ChuongTrinhDaoTao.html</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            padding-top: 50px;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            width: 800px;
+            min-height: 450px;
+            border: 3px double #000;
+            padding: 30px;
+            background-color: #fff;
+            background-image: url("../Images/Background-trang.jpg");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            position: relative;
+        }
+
+        .top-menu {
+            font-family: Times, "Times New Roman", serif;
+        }
+
+        .red-title {
+            color: red;
+            font-family: Arial, sans-serif;
+            font-weight: bold;
+            font-size: 1.2em;
+            margin-top: 20px;
+        }
+
+        .menu-link {
+            color: purple;
+            text-decoration: underline;
+        }
+
+        .nav-links {
+            color: blue;
+            text-decoration: underline;
+            margin-bottom: 5px;
+            display: inline-block;
+        }
+
+        .main-list {
+            list-style-type: upper-roman;
+            font-weight: bold;
+        }
+
+        .sub-list {
+            list-style-type: decimal;
+            font-weight: normal;
+        }
+
+        .footer-link {
+            position: absolute;
+            bottom: 15px;
+            right: 30px;
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container" id="top">
+    <div class="top-menu">
+        1. Kỹ thuật viên tin học <br>
+        <a href="BT8_ChuongTrinhDTWeb.html" target="_self" class="menu-link">2. Chuyên ngành Website</a>
+    </div>
+
+    <hr>
+
+    <div class="red-title">Kỹ thuật viên tin học</div>
+
+    <a href="#phan1" class="nav-links">Học phần I</a> <br>
+    <a href="#phan2" class="nav-links">Học phần II</a> <br>
+    <a href="#phan3" class="nav-links">Học phần III</a>
+
+    <ol class="main-list">
+        <li id="phan1"> Tin Học Căn Bản
+            <ol class="sub-list">
+                <li>Tổng quan cấu trúc máy tính</li>
+                <li>Hệ điều hành Windows & Internet</li>
+            </ol>
+        </li>
+
+        <li id="phan2"> Tin Học Văn Phòng
+            <ol class="sub-list">
+                <li>Microsoft Word</li>
+                <li>Microsoft Excel</li>
+            </ol>
+        </li>
+
+        <li id="phan3"> Tin Học Quản Lý
+            <ol class="sub-list">
+                <li>Microsoft Access</li>
+                <li>Microsoft PowerPoint</li>
+            </ol>
+        </li>
+    </ol>
+
+    <a href="#top" class="footer-link">Đầu trang</a>
+</div>
+
+</body>
+</html>
