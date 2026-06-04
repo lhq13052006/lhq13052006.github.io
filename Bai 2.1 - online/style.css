@@ -1,0 +1,153 @@
+body {
+    margin: 0;
+    background-color: #f27e01; /* Màu nền cam giả lập ảnh bg.gif */
+    font-family: arial;
+}
+
+.container {
+    width: 800px;
+    margin: 20px auto;
+    background-color: #FFFFFF;
+}
+
+.border { 
+    border: #fc8e03 2px solid; 
+}
+
+/* Header & Menu */
+.header {
+    background: linear-gradient(to bottom, #f27e01, #feac00);
+    height: 150px;
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.logo-text {
+    font-family: Verdana;
+    font-size: 30px;
+    color: white;
+    font-style: italic;
+    text-align: center;
+}
+
+.main-title {
+    font-family: Verdana;
+    font-size: 50px;
+    color: white;
+    font-weight: bold;
+    font-style: italic;
+    text-align: center;
+    letter-spacing: 5px;
+    border-bottom: 2px solid white;
+    display: inline-block;
+    width: 100%;
+}
+
+.menu {
+    background-color: #000000;
+    padding: 10px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.menu a {
+    font-family: arial;
+    font-size: 11px;
+    color: #FFFFFF;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.menu a:hover {
+    text-decoration: underline;
+}
+
+/* Content Area */
+.main-body {
+    display: flex;
+}
+
+.content-left {
+    flex: 2;
+}
+
+.sidebar {
+    flex: 1;
+    padding: 10px;
+}
+
+.nen_chuyen_sac { 
+    background-color: #FCD001; /* Màu vàng của sidebar */
+    padding-left: 5px;
+}
+
+.noidung { 
+    font-family: arial; 
+    font-size: 11px; 
+    color: #8e8b86; 
+    padding: 10px; 
+    background-color: #FFFFFF;
+}
+
+/* Typography */
+.tieude01 { 
+    font-family: Verdana; 
+    font-size: 20px; 
+    font-style: italic; 
+    color: #9d2c00;
+    margin-bottom: 10px;
+}
+
+.tieude02 { 
+    font-family: arial; 
+    font-size: 11px; 
+    color: #000000; 
+    font-weight: bold;
+}
+
+.tieude03 { 
+    font-family: arial; 
+    font-size: 11px; 
+    color: #9d2c00;
+}
+
+.tieude04 { 
+    font-family: arial; 
+    font-size: 11px; 
+    color: #FFFFFF;
+}
+
+.tieude05 { 
+    font-family: arial; 
+    font-size: 18px; 
+    font-style: italic; 
+    font-weight: bold; 
+    color: #000000; 
+    padding-left: 5px;
+}
+
+/* Sidebar News & Gallery */
+.news-item {
+    display: flex;
+    margin-bottom: 10px;
+    border-bottom: 1px dotted #9d2c00;
+    padding-bottom: 5px;
+}
+
+.news-item img {
+    margin-right: 5px;
+    border: 1px solid #fff;
+}
+
+.gallery img {
+    margin: 5px;
+}
+
+/* Footer */
+.footer {
+    background-color: #000000;
+    text-align: center;
+    padding: 15px;
+    clear: both;
+}
