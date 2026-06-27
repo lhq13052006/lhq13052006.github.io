@@ -1,0 +1,113 @@
+body {
+    background-color: #a2e97a; /* Thay bằng mã màu xanh lá cây chính xác của bạn */
+    margin: 0;
+    padding: 0;
+}
+.top{
+	background-image: url("Images/banner_bg.gif");
+}
+.gay{
+	background-image: url("Images/background.gif");
+	vertical-align: top !important; 
+}
+
+/* Đảm bảo thẻ bọc ngoài cùng không tạo khoảng đệm thừa */
+.gay div {
+    margin: 0px 0px 15px 0px; /* Khoảng cách dưới mỗi khối (Genre, Format...) */
+    padding: 0px;
+}
+
+/* Ép bức ảnh tiêu đề (Genre, Format...) không sinh ra khoảng trống ở đáy */
+.gay div img {
+    display: block;
+    margin: 0px;
+}
+
+/* Ép khung danh sách UL dính chặt lên đáy của ảnh tiêu đề */
+.gay div ul {
+    list-style: none; /* Tắt bỏ hoàn toàn icon mặc định */
+    padding: 0px;
+    margin: 4px 0px 0px 0px; /* 4px này là khoảng cách từ chữ lên ảnh, muốn sát nữa bạn đổi thành 0px */
+}
+
+/* Ép từng dòng LI và chữ dính sát lên trên */
+.gay div ul li {
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    color: #1c3c00;
+    
+    margin: 0px 0px 5px 0px; /* Khoảng cách giữa các dòng chữ với nhau */
+    padding: 0px 0px 0px 14px; /* Chừa khoảng trống bên trái 14px để hiển thị mũi tên */
+    
+    /* Bộ ba thuộc tính ép chữ dính lên đỉnh */
+    display: block;
+    line-height: 12px;       /* Thu hẹp chiều cao dòng bằng đúng cỡ chữ */
+    vertical-align: top;     /* Ép canh lề sát đỉnh */
+    
+    /* Đặt ảnh mũi tên làm nền */
+    background-image: url('Images/Arrow.gif');
+    background-repeat: no-repeat;
+    background-position: left 2px; /* Số 2px này giúp bạn chỉnh mũi tên lên xuống cho bằng vai phải lứa với chữ */
+}
+/* Khung bọc toàn bộ nội dung chính bên phải */
+.main-content {
+    vertical-align: top;
+    background-color: #ffffff;
+    padding: 20px 30px;
+    font-family: Arial, sans-serif;
+}
+
+/* Tiêu đề lớn Product Overview */
+.main-content h1 {
+    font-size: 22px;
+    color: #2e5c00; /* Màu xanh lá đậm */
+    margin: 0 0 10px 0;
+    font-weight: bold;
+}
+
+/* Dòng chữ mô tả nhỏ */
+.main-content .description {
+    font-size: 13px;
+    color: #333333;
+    margin-bottom: 25px;
+}
+
+/* Khung bọc mỗi sản phẩm (Business, Vibes) */
+.product-item {
+    margin-bottom: 30px;
+    clear: both; /* Tránh việc các khối bị đè lên nhau khi dùng float */
+}
+
+/* Định dạng khối chứa ảnh bên trái */
+.product-image {
+    float: left;
+    width: 135px; /* Khớp với kích thước ảnh cắt trong Dreamweaver */
+    margin-right: 15px;
+}
+
+.product-image img {
+    border: 1px solid #999999; /* Tạo viền xám mỏng bọc quanh ảnh */
+    padding: 1px;
+    background-color: #ffffff;
+}
+
+/* Khối chứa thông tin chữ bên phải của ảnh */
+.product-info {
+    overflow: hidden; /* Giúp khối chữ tự động bao quanh và ôm sát cạnh ảnh */
+}
+
+/* Tiêu đề sản phẩm (Business, Vibes...) */
+.product-info h2 {
+    font-size: 18px;
+    color: #2e5c00;
+    margin: 0 0 8px 0;
+    font-weight: bold;
+}
+
+/* Đoạn văn bản chi tiết sản phẩm */
+.product-info p {
+    font-size: 12px;
+    color: #444444;
+    line-height: 1.6; /* Tạo khoảng cách dòng thưa thoáng dễ đọc */
+    margin: 0;
+}

@@ -1,0 +1,163 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Sound Shopper</title>
+<style type="text/css">
+body {
+	background: #CCFF9A;
+}
+a:link, a:visited {
+	color: #809645;
+	text-decoration: none;
+}
+a:hover {
+	color: #006600;
+	text-decoration: underline;
+}
+.banner {
+	background-image: url(Images/banner_bg.gif);
+}
+.chubanner {
+	font-size: 14px;
+	font-family: "Arial", Gadget, sans-serif;
+	text-align: right;
+	color: #809645;
+	padding-right: 15px;
+}
+.back {
+	background-image: url(Images/background.gif);
+	vertical-align: top;
+}
+
+/* Định dạng danh sách Menu sử dụng ảnh mũi tên */
+ul.custom-menu {
+	list-style: none;
+	padding: 0;
+	margin: 10px 0 15px 0; /* Khoảng cách trên/dưới của mỗi cụm danh sách */
+}
+ul.custom-menu li {
+	background-image: url('Images/Arrow.gif');
+	background-repeat: no-repeat;
+	background-position: 10px center;  /* Căn lề trái và giữa dòng cho mũi tên */
+	background-size: 11px auto;         /* Thu nhỏ mũi tên cho vừa vặn */
+	padding-left: 30px;                 /* Đẩy chữ qua bên phải để không đè lên mũi tên */
+	margin-bottom: 3px;                 /* Khoảng cách giữa các dòng chữ */
+	font-family: Arial, sans-serif;
+	font-size: 13px;
+	color: #003300; 
+}
+
+/* --- ĐOẠN CSS THÊM VÀO: Định dạng chữ cho vùng nội dung bên phải --- */
+.content-area {
+	padding: 25px 30px 20px 30px; /* Tạo khoảng cách đệm trống xung quanh text cho đẹp */
+	font-family: Arial, Helvetica, sans-serif;
+}
+.content-area h1 {
+	font-size: 24px;
+	color: #435E00;               /* Màu xanh rêu đậm theo mẫu */
+	margin: 0 0 15px 0;           /* Khoảng cách dưới tiêu đề */
+	font-weight: bold;
+}
+.content-area p {
+	font-size: 13px;              /* Kích thước chữ vừa vặn, dễ đọc */
+	color: #000000;               /* Màu chữ đen */
+	line-height: 1.5;             /* Khoảng cách giữa các dòng chữ thông thoáng */
+	margin: 0 0 15px 0;           /* Khoảng cách giữa các đoạn văn */
+	text-align: left;
+}
+</style>
+<script type="text/javascript">
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+</script>
+</head>
+<body onload="MM_preloadImages('Images/home_over.gif','Images/about_over.gif','Images/Product_over.gif','Images/link_over.gif','Images/contact_over.gif')">
+<table width="780" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td colspan="2" class="banner">
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td width="40%"><img src="Images/Logo.gif" width="343" height="68" /></td>
+          <td width="60%" class="chubanner"><a href="#">HELP</a> | <a href="#">SUPPORT</a> | <a href="#">SEARCH</a></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+   
+  <tr>
+    <td colspan="2" bgcolor="#E68B00">
+      <img src="Images/corner.gif" width="185" height="26" style="display:block; float:left;" /><a href="index.html"><img src="Images/home_up.gif" width="91" height="26" id="Image1" onmouseover="MM_swapImage('Image1','','Images/home_over.gif',1)" onmouseout="MM_swapImgRestore()" style="display:block; float:left;" /></a><a href="aboutus.html"><img src="Images/about_up.gif" width="131" height="26" id="Image2" onmouseover="MM_swapImage('Image2','','Images/about_over.gif',1)" onmouseout="MM_swapImgRestore()" style="display:block; float:left;" /></a><a href="products.html"><img src="Images/Product_up.gif" width="134" height="26" id="Image3" onmouseover="MM_swapImage('Image3','','Images/Product_over.gif',1)" onmouseout="MM_swapImgRestore()" style="display:block; float:left;" /></a><a href="#"><img src="Images/link_up.gif" width="109" height="26" id="Image4" onmouseover="MM_swapImage('Image4','','Images/link_over.gif',1)" onmouseout="MM_swapImgRestore()" style="display:block; float:left;" /></a><a href="contact.html"><img src="Images/contact_up.gif" width="129" height="26" id="Image5" onmouseover="MM_swapImage('Image5','','Images/contact_over.gif',1)" onmouseout="MM_swapImgRestore()" style="display:block; float:left;" /></a>
+    </td>
+  </tr>
+   
+  <tr>
+    <td width="185" height="486" class="back">
+      <img src="Images/spotlight.gif" width="185" height="108" style="display: block;" />
+       
+      <img src="Images/Genre.gif" width="185" height="28" alt="Genre" style="display: block;" />
+      <ul class="custom-menu">
+        <li>Business</li>
+        <li>Vibes</li>
+        <li>Urban Grooves</li>
+        <li>Party Zone</li>
+      </ul>
+
+      <img src="Images/Format.gif" width="185" height="28" alt="Format" style="display: block;" />
+      <ul class="custom-menu">
+        <li>Loops</li>
+        <li>Intros</li>
+        <li>Tracks</li>
+        <li>Construction Kits</li>
+      </ul>
+
+      <img src="Images/Overview.gif" width="185" height="28" alt="Overview" style="display: block;" />
+      <ul class="custom-menu">
+        <li>Your Cart</li>
+        <li>Your Account</li>
+        <li>Check Out</li>
+        <li>Contact Us</li>
+      </ul>
+    </td>
+    <td width="595" bgcolor="#FFFFFF" valign="top">
+      <div class="content-area">
+        <h1>About Us</h1>
+        
+        <p>Matsushita Electric Corporation of America (Panasonic) has created this online privacy statement in order to disclose our information gathering and dissemination practices for this site; http://www.panasonic.com.</p>
+        
+        <p>We use your IP address to help diagnose problems with our server, and to administer our website. Your IP address identifies you and your shopping cart, and allows us to gather broad demographic information on site visitors.</p>
+        
+        <p>Parts of our sites use a browser feature called "cookies". A cookie is a small data file that certain Web sites write to your hard drive when you visit them. A cookie file can contain information such as a user ID that the site uses to track the pages you've visited or keep track of what you've put in a shopping basket. The only personal information a cookie can contain is information you supply yourself. A cookie can't read data off your hard disk or read cookie files created by other sites. A cookie will not corrupt your hard drive or transmit viruses to your computer.</p>
+        
+        <p>Our site may contain or may link to various other sites which ask to collect user information voluntarily. Your information will be used by us and may be shared with our partners for market research studies, reports, and surveys as well as for marketing purposes. Users are always given the choice to use the opt-out feature if you prefer not to participate in these opportunities (see below).</p>
+      </div>
+      </td>
+  </tr>
+   
+  <tr>
+    <td colspan="2" bgcolor="#FFFFFF">
+      <hr style="border: none; height: 1px; background-color: #E68B00; margin: 0; padding: 0;" />
+    </td>
+  </tr>
+</table>
+</body>
+</html>
