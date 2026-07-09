@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phiếu Đăng Ký</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            width: 600px;
+            background-color: #fff;
+            padding: 20px;
+            border: 1px solid #ccc;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+   
+        .header-wrap {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .header-images {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .header-images img {
+            height: 70px;
+        }
+
+       
+        .red-line {
+            border-bottom: 3px solid red;
+            width: 60%;
+            margin: 0 auto 20px auto;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 24px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        td {
+            padding: 5px;
+            vertical-align: top;
+        }
+
+        .label {
+            text-align: right;
+            width: 30%;
+            padding-right: 10px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        select,
+        textarea {
+            width: 90%;
+            padding: 4px;
+            border: 1px solid #888;
+        }
+
+        textarea {
+            height: 100px;
+            resize: vertical;
+        }
+
+        .checkbox-group label {
+            display: block;
+            margin-bottom: 3px;
+        }
+
+        .buttons {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .buttons input {
+            padding: 5px 15px;
+            margin: 0 5px;
+            cursor: pointer;
+            background-color: #f0f0f0;
+            border: 1px solid #888;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header-wrap">
+        <img src="Images/lachong.gif" alt="Logo Lạc Hồng" style="height: 70px;">
+       
+        <div class="header-images">
+            <img src="Images/Flash.gif" alt="Flash">
+            <img src="Images/dreamweaver.gif" alt="Dreamweaver">
+            <img src="Images/adobe.gif" alt="Adobe">
+        </div>
+    </div>
+
+    <div class="red-line"></div>
+
+    <h1>Phiếu Đăng Ký</h1>
+
+    <form action="#" method="post" enctype="multipart/form-data">
+        <table>
+            <tr>
+                <td class="label">Họ và tên:</td>
+                <td><input type="text" name="fullname" required> <span>(*)</span></td>
+            </tr>
+            <tr>
+                <td class="label">Địa chỉ:</td>
+                <td><input type="text" name="address" required></td>
+            </tr>
+            <tr>
+                <td class="label">Email:</td>
+                <td><input type="email" name="email" required> <span>(*)</span></td>
+            </tr>
+            <tr>
+                <td class="label">Giới tính:</td>
+                <td>
+                    <input type="radio" name="gender" value="Nam" id="nam"> <label for="nam">Nam</label>
+                    <input type="radio" name="gender" value="Nữ" id="nu"> <label for="nu">Nữ</label>
+                </td>
+            </tr>
+            <tr>
+                <td class="label">Tuổi:</td>
+                <td><input type="text" name="age" style="width: 50px;" required> <span>(*)</span></td>
+            </tr>
+            <tr>
+                <td class="label">Sở thích:</td>
+                <td class="checkbox-group">
+                    <label><input type="checkbox" name="hobby"> Thể thao</label>
+                    <label><input type="checkbox" name="hobby"> Văn học</label>
+                    <label><input type="checkbox" name="hobby"> Công nghệ thông tin</label>
+                    <label><input type="checkbox" name="hobby"> Lịch sử</label>
+                    <label><input type="checkbox" name="hobby"> Game</label>
+                </td>
+            </tr>
+            <tr>
+                <td class="label">Chuyên ngành:</td>
+                <td>
+                    <select name="major">
+                        <option value="web">Công nghệ Web</option>
+                        <option value="app">Ứng dụng di động</option>
+                        <option value="design">Thiết kế đồ họa</option>
+                        <option value="design">Công nghệ thông tin</option>
+                        <option value="design">Quản trị mạng</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td class="label">Gửi hình:</td>
+                <td>
+                    <input type="text" style="width: 60%;" readonly>
+                    <input type="file" id="file-upload" style="display:none;">
+                    <button type="button" onclick="document.getElementById('file-upload').click()">Browse...</button>
+                </td>
+            </tr>
+            <tr>
+                <td class="label">Yêu cầu:</td>
+                <td><textarea name="request"></textarea></td>
+            </tr>
+        </table>
+
+        <div class="buttons">
+            <input type="submit" value="Gửi thông tin">
+            <input type="reset" value="Nhập lại">
+        </div>
+    </form>
+</div>
+
+</body>
+</html>
