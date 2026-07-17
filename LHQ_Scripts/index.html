@@ -85,76 +85,93 @@
    <hr>
 
   <div class="bai-tap" style="text-align: center;">
-    <h3>Bài 6. Ngày giờ hệ thống</h3>
-    <span id="ngay"></span>, <span id="dong-ho-6">00:00:00</span>
-  </div>
+  <h3>Bài 6. Ngày giờ hệ thống</h3>
+  <span id="ngay"></span>, <span id="dong-ho-6">00:00:00</span>
+</div>
 
-  <script>
-    var theKetQua = document.getElementById("ketqua");
+<script>
+  // Kiểm tra nếu có phần tử ketqua thì mới gán
+  var theKetQua = document.getElementById("ketqua");
 
+  // Đặt các nút vào câu điều kiện if để nếu thiếu nút ở HTML thì code bên dưới vẫn chạy bình thường
+  if (document.getElementById("cong")) {
     document.getElementById("cong").onclick = function() {
       var so1 = Number(document.getElementById("txtso1").value);
       var so2 = Number(document.getElementById("txtso2").value);
-      theKetQua.innerHTML = so1 + so2;
+      if (theKetQua) theKetQua.innerHTML = so1 + so2;
     };
+  }
 
+  if (document.getElementById("tru")) {
     document.getElementById("tru").onclick = function() {
       var so1 = Number(document.getElementById("txtso1").value);
       var so2 = Number(document.getElementById("txtso2").value);
-      theKetQua.innerHTML = so1 - so2;
+      if (theKetQua) theKetQua.innerHTML = so1 - so2;
     };
+  }
 
+  if (document.getElementById("nhan")) {
     document.getElementById("nhan").onclick = function() {
       var so1 = Number(document.getElementById("txtso1").value);
       var so2 = Number(document.getElementById("txtso2").value);
-      theKetQua.innerHTML = so1 * so2;
+      if (theKetQua) theKetQua.innerHTML = so1 * so2;
     };
+  }
 
+  if (document.getElementById("chia")) {
     document.getElementById("chia").onclick = function() {
       var so1 = Number(document.getElementById("txtso1").value);
       var so2 = Number(document.getElementById("txtso2").value);
       if (so2 === 0) {
-        theKetQua.innerHTML = "Lỗi: Không thể chia cho 0!";
+        if (theKetQua) theKetQua.innerHTML = "Lỗi: Không thể chia cho 0!";
       } else {
-        theKetQua.innerHTML = so1 / so2;
+        if (theKetQua) theKetQua.innerHTML = so1 / so2;
       }
     };
+  }
 
-    var d = new Date();
-    var time = d.getHours();
-    var loiChaoText = "";
+  // Lời chào theo giờ
+  var d = new Date();
+  var time = d.getHours();
+  var loiChaoText = "";
 
-    if (time < 10) {
-      loiChaoText = "Chào buổi sáng";
-    } else if (time < 17) {
-      loiChaoText = "Chào buổi chiều";
-    } else {
-      loiChaoText = "Chào buổi tối";
-    }
+  if (time < 10) {
+    loiChaoText = "Chào buổi sáng";
+  } else if (time < 17) {
+    loiChaoText = "Chào buổi chiều";
+  } else {
+    loiChaoText = "Chào buổi tối";
+  }
+  
+  // Thêm điều kiện if để tránh lỗi nếu thiếu thẻ id="loi-chao"
+  if (document.getElementById("loi-chao")) {
     document.getElementById("loi-chao").innerText = loiChaoText;
+  }
 
-    function capNhatDongHo() {
-      const bayGio = new Date();
-      const chuoiThoiGian = bayGio.toLocaleTimeString('vi-VN');
-      if(document.getElementById('dong-ho-5')) {
-        document.getElementById('dong-ho-5').innerText = chuoiThoiGian;
-      }
-      if(document.getElementById('dong-ho-6')) {
-        document.getElementById('dong-ho-6').innerText = chuoiThoiGian;
-      }
+  // Cập nhật đồng hồ
+  function capNhatDongHo() {
+    const bayGio = new Date();
+    const chuoiThoiGian = bayGio.toLocaleTimeString('vi-VN');
+    if(document.getElementById('dong-ho-5')) {
+      document.getElementById('dong-ho-5').innerText = chuoiThoiGian;
     }
-
-    capNhatDongHo();
-    setInterval(capNhatDongHo, 1000);
-    function hienthiNgay(){
-      var d = new Date();
-      var dd=d.getDate();
-      var m=d.getMonth();
-      var y =d.getFullYear();
-      document.getElementById('ngay'). innerHTML="Hôm nay, ngày "+dd+" tháng "+m+" năm "+y;
+    if(document.getElementById('dong-ho-6')) {
+      document.getElementById('dong-ho-6').innerText = chuoiThoiGian;
     }
-    hienthiNgay();
-  </script>
+  }
 
-</body>
-</html>
+  capNhatDongHo();
+  setInterval(capNhatDongHo, 1000);
+
+  // Hiển thị ngày (Đã sửa lỗi hiển thị thiếu 1 tháng của hàm getMonth())
+  function hienthiNgay(){
+    var d = new Date();
+    var dd = d.getDate();
+    var m = d.getMonth() + 1; // getMonth() trả về 0-11 nên phải +1 để ra tháng chính xác
+    var y = d.getFullYear();
+    if (document.getElementById('ngay')) {
+      document.getElementById('ngay').innerHTML = "Hôm nay, ngày " + dd + " tháng " + m + " năm " + y;
+    }
+  }
+  hienthiNgay();
+</script>
