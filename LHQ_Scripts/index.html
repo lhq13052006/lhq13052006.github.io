@@ -129,7 +129,12 @@
     function capNhatDongHo() {
       const bayGio = new Date();
       const chuoiThoiGian = bayGio.toLocaleTimeString('vi-VN');
-      document.getElementById('dong-ho').innerText = chuoiThoiGian;
+      if(document.getElementById('dong-ho-5')) {
+        document.getElementById('dong-ho-5').innerText = chuoiThoiGian;
+      }
+      if(document.getElementById('dong-ho-6')) {
+        document.getElementById('dong-ho-6').innerText = chuoiThoiGian;
+      }
     }
 
     capNhatDongHo();
