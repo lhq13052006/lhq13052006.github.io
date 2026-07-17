@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Slideshow Gallery</title>
+<style>
+body {
+  font-family: Arial;
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+img {
+  vertical-align: middle;
+}
+
+.container {
+  position: relative;
+}
+
+.mySlides {
+  display: none;
+}
+.anh-dai-dien {
+  width: 100%;
+  height: auto; 
+  max-height: 600px;  
+  object-fit: cover;
+  display: block;
+}
+
+.cursor {
+  cursor: pointer;
+}
+
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 40%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+  z-index: 10;
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+  z-index: 10;
+  background-color: rgba(0,0,0,0.3);
+}
+
+.caption-container {
+  text-align: center;
+  background-color: #222;
+  padding: 10px 16px;
+  color: white;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.column {
+  float: left;
+  width: 16.66%;
+}
+.anh-thumbnail {
+  height: 80px;
+  object-fit: cover;
+}
+
+.demo {
+  opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+  opacity: 1;
+}
+</style>
+</head>
+<body>
+
+<h2 style="text-align:center">Slideshow Gallery - Fontaine & Regions</h2>
+
+<div class="container">
+  <!-- PHẦN ẢNH LỚN HIỂN THỊ -->
+  <div class="mySlides">
+    <div class="numbertext">1 / 6</div>
+    <img src="Fontaine.webp" class="anh-dai-dien">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">2 / 6</div>
+    <img src="Beryl_Region.webp" class="anh-dai-dien">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">3 / 6</div>
+    <img src="Erinnyes_Forest.webp" class="anh-dai-dien">
+  </div>
+    
+  <div class="mySlides">
+    <div class="numbertext">4 / 6</div>
+    <img src="Fontaine_Research_Institute_of_Kinetic_Energy_Engineering_Region.webp" class="anh-dai-dien">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">5 / 6</div>
+    <img src="Morte_Region.webp" class="anh-dai-dien">
+  </div>
+    
+  <div class="mySlides">
+    <div class="numbertext">6 / 6</div>
+    <img src="Sea_of_Bygone_Eras.webp" class="anh-dai-dien">
+  </div>
+    
+  <a class="prev" onclick="plusSlides(-1)">❮</a>
+  <a class="next" onclick="plusSlides(1)">❯</a>
+
+  <div class="caption-container">
+    <p id="caption"></p>
+  </div>
+
+  <!-- PHẦN CÁC ẢNH NHỎ PHÍA DƯỚI -->
+  <div class="row">
+    <div class="column">
+      <img class="demo cursor anh-thumbnail" src="Fontaine.webp" style="width:100%" onclick="currentSlide(1)" alt="Fontaine">
+    </div>
+    <div class="column">
+      <img class="demo cursor anh-thumbnail" src="Beryl_Region.webp" style="width:100%" onclick="currentSlide(2)" alt="Beryl Region">
+    </div>
+    <div class="column">
+      <img class="demo cursor anh-thumbnail" src="Erinnyes_Forest.webp" style="width:100%" onclick="currentSlide(3)" alt="Erinnyes Forest">
+    </div>
+    <div class="column">
+      <img class="demo cursor anh-thumbnail" src="Fontaine_Research_Institute_of_Kinetic_Energy_Engineering_Region.webp" style="width:100%" onclick="currentSlide(4)" alt="Fontaine Research Institute of Kinetic Energy Engineering Region">
+    </div>
+    <div class="column">
+      <img class="demo cursor anh-thumbnail" src="Morte_Region.webp" style="width:100%" onclick="currentSlide(5)" alt="Morte Region">
+    </div>    
+    <div class="column">
+      <img class="demo cursor anh-thumbnail" src="Sea_of_Bygone_Eras.webp" style="width:100%" onclick="currentSlide(6)" alt="Sea of Bygone Eras">
+    </div>
+  </div>
+</div>
+
+<script>
+let slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("demo");
+  let captionText = document.getElementById("caption");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  captionText.innerHTML = dots[slideIndex-1].alt;
+}
+</script>
+    
+</body>
+</html>
