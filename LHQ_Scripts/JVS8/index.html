@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Bài 8</title>
+  <style type="text/css">
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      transition: background-color 1s ease; /* Hiệu ứng đổi màu mượt mà */
+      font-family: Arial, sans-serif;
+      color: white;
+      text-shadow: 1px 1px 5px rgba(0,0,0,0.3);
+    }
+        .box-giua {
+      text-align: center;
+    }
+    #icon-mua {
+      margin-bottom: 10px;
+    }
+    #ten-mua {
+      font-size: 2rem;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="box-giua">
+    <div id="icon-mua">🌸</div>
+    <div id="ten-mua">Mùa Xuân</div>
+  </div>
+
+  <script>
+    function doiMuaTheoPhut() {
+      var phut = new Date().getMinutes();
+      var chiSoMua = phut % 4;
+      var bieuTuong = "";
+      var tenMuaText = "";
+      var mauNen = "";
+
+      if (chiSoMua === 0) {
+        bieuTuong = "🌸"; 
+        tenMuaText = "Mùa Xuân";
+        mauNen = "#ffb6c1";
+      } else if (chiSoMua === 1) {
+        bieuTuong = "☀️"; 
+        tenMuaText = "Mùa Hạ";
+        mauNen = "#ffa500";
+      } else if (chiSoMua === 2) {
+        bieuTuong = "🍁"; 
+        tenMuaText = "Mùa Thu";
+        mauNen = "#d2691e";
+      } else {
+        bieuTuong = "❄️"; 
+        tenMuaText = "Mùa Đông";
+        mauNen = "#4682b4";
+      }
+      document.body.style.backgroundColor = mauNen;
+      document.getElementById("icon-mua").innerText = bieuTuong;
+      document.getElementById("ten-mua").innerText = tenMuaText;
+    }
+    doiMuaTheoPhut();
+    setInterval(doiMuaTheoPhut, 1000);
+  </script>
+
+</body>
+</html>
