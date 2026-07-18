@@ -1,299 +1,163 @@
-<!DOCTYPE html>
-<html lang="vi">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <meta charset="UTF-8">
-    <title>Con Tem Có Từ Khi Nào</title>
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-        }
-        
-        /* Khung chứa cố định */
-        .web-wrapper {
-            display: flex;
-            width: 800px;       
-            height: 480px;      
-            position: relative;
-            background-color: #ffffff;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-            overflow: hidden;
-        }
-        
-        /* KHUNG BÊN TRÁI - Chứa hình chìm và các đường gạch */
-        .left-panel {
-            width: 50%;
-            height: 100%;
-            position: relative;
-            background-color: #ffffff;
-            background-image: url('IMAGES/tem.jpg'); 
-            background-repeat: no-repeat;
-            background-position: left top;
-            background-size: 100% auto;
-            border-right: 1px solid #3366cc;
-        }
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Tem</title>
+<style type="text/css">
+.web-container {
+    position: relative;
+    width: 938px;
+    height: 625px;
+    margin: 0 auto;
+    overflow: hidden;
+}
 
-        /* Các đường gạch nằm trong khung trái để không lem sang phải */
-        .orange-line-1 {
-            position: absolute;
-            left: 0;
-            top: 265px;
-            width: 100%;
-            height: 3px;
-            background-color: #ffcc00;
-            z-index: 2;
-        }
-        
-        .orange-line-2 {
-            position: absolute;
-            left: 0;
-            bottom: 96px;
-            width: 100%;
-            height: 2px;
-            background-color: #ffcc00;
-            z-index: 2;
-        }
+.background-moc {
+    background-image: url(IMAGES/tem.jpg);
+    background-repeat: no-repeat;
+    width: 486px;
+    height: 625px;
+    vertical-align: bottom;
+}
 
-        /* Dải ảnh sọc ngang trang trí (socngang.gif) */
-        .decor-lines {
-            position: absolute;
-            left: 0;
-            bottom: 60px;
-            width: 100%;
-            height: 16px;
-            background-image: url('IMAGES/socngang.gif'); 
-            background-repeat: repeat-x;
-            z-index: 5;
-        }
-        
-        /* Đường gạch màu xanh sát đáy */
-        .blue-bottom-line {
-            position: absolute;
-            left: 0;
-            bottom: 25px;
-            width: 100%;
-            height: 4px;
-            background-color: #3366cc;
-            z-index: 2;
-        }
+.soc_ngang {
+    background-image: url(IMAGES/socngang.gif);
+    background-repeat: repeat-x;
+    background-position: top;
+    height: 281px;
+}
 
-        /* Thanh thang màu dọc sát vách chia đôi */
-        .color-bar {
-            position: absolute;
-            right: 15px;
-            bottom: 45px;
-            width: 12px;
-            height: 80px;
-            background-image: url('IMAGES/mmau1.gif');
-            background-size: 100% 100%;
-            background-repeat: no-repeat;
-            z-index: 3;
-            border-left: 1px solid #3366cc;
-        }
+.mmau1 {
+    background-image: url(IMAGES/mmau1.gif);
+    background-repeat: no-repeat;
+    background-position: left center;
+}
 
-        /* Dãy tem minh họa phía dưới */
-        .stamps-row {
-            position: absolute;
-            bottom: 40px; 
-            left: 85px;
-            display: flex;
-            align-items: flex-end;
-            z-index: 10;
-        }
-        .stamp-item {
-            width: 52px;
-            height: auto;
-            margin-right: 2px;
-            border: 1px solid #000;
-            cursor: pointer;
-        }
-        .stamp-rotated {
-            width: 80px !important;
-            height: auto;
-            border: none !important;
-            position: absolute;
-            left: 180px;
-            bottom: 48px; 
-            transform: rotate(-30deg);
-            z-index: 20;
-        }
+.right-panel {
+    width: 452px;
+    height: 625px;
+    background-color: #A7B5D8;
+    vertical-align: top;
+}
 
-        /* Bộ nút menu chân trang trái */
-        .nav-links {
-            position: absolute;
-            bottom: 5px;
-            left: 0;
-            width: 100%;
-            text-align: center;
-            font-size: 12px;
-            font-weight: bold;
-            font-family: "Times New Roman", Times, serif;
-        }
-        .nav-links a {
-            text-decoration: none;
-            color: #3333ff;
-        }
+.gold-stamp-position {
+    position: absolute;
+    left: 422px;  
+    top: 0px;     
+    z-index: 100; 
+}
 
-        /* KHUNG BÊN PHẢI - Đã đổi sang mã màu chuẩn A7B5D8 */
-        .right-panel {
-            width: 50%;
-            height: 100%;
-            background-color: #A7B5D8; /* Cập nhật màu nền theo yêu cầu */
-            position: relative;
-            padding: 20px 25px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
+.drop-animation {
+    animation: driftAndRotate 7s linear infinite;
+}
+@keyframes driftAndRotate {
+    0% {
+        transform: translateY(-120px) rotate(0deg); 
+    }
+    100% {
+        transform: translateY(640px) rotate(360deg); 
+    }
+}
 
-        /* Tiêu đề chữ nghệ thuật */
-        .title-container {
-            margin-top: 10px;
-            margin-bottom: 15px;
-        }
-        .title-img {
-            max-width: 90%;
-            height: auto;
-            display: block;
-        }
+.fixed-stamp-position {
+    position: absolute;
+    left: 316px;  
+    top: 369px;   
+    z-index: 99;  
+    transform: rotate(-35deg); 
+}
+.web-container table tr .right-panel table tr td {
+    text-align: center;
+    font-weight: normal;
+}
 
-        /* Nội dung văn bản */
-        .content-text {
-            color: #000000;
-            font-size: 13px;
-            line-height: 1.5;
-            text-align: center;
-            padding: 0 10px;
-            font-weight: 500;
-        }
-
-        /* Con dấu đỏ */
-        .condau-container {
-            margin-top: 20px;
-        }
-        .condau-img {
-            width: 140px;
-            height: auto;
-        }
-
-        /* Khung viền nét chấm ở chân trang phải */
-        .bottom-frame {
-            width: 100%;
-            position: absolute;
-            bottom: 25px;
-            left: 0;
-            padding: 0 15px;
-        }
-        .bottom-border-text {
-            border-top: 2px dotted #000000;
-            border-bottom: 2px dotted #000000;
-            padding: 5px 0;
-            text-align: center;
-            font-family: Courier, monospace;
-            font-weight: bold;
-            font-size: 15px;
-            letter-spacing: 4px;
-            color: #000000;
-        }
-
-        /* TRẢ LẠI HIỆU ỨNG CŨ: Con tem rơi tự do và xoay 360 độ sinh động */
-        .falling-stamp {
-            position: absolute;
-            top: -90px;
-            left: 50%; 
-            width: 50px; 
-            z-index: 100;
-            animation: stampDropOldStyle 6s linear infinite; /* Chạy liên tục */
-            pointer-events: none;
-        }
-        
-        @keyframes stampDropOldStyle {
-            0% {
-                top: -90px;
-                transform: translateX(-50%) rotate(0deg); /* Bắt đầu rơi */
-            }
-            100% {
-                top: 500px;
-                transform: translateX(-50%) rotate(360deg); /* Vừa rơi vừa xoay tròn như cũ */
-            }
-        }
-    </style>
+.vien-cham-tron {
+    border-top: 4px dotted #000000;    
+    border-bottom: 4px dotted #000000; 
+    padding: 8px 0;                    
+    width: 100%;                       
+    box-sizing: border-box;
+    font-family: Courier, monospace;
+    font-size: 16px;
+    letter-spacing: 2px;
+    color: #000000;
+}
+</style>
 </head>
+
 <body>
 
-    <div class="web-wrapper" id="webContainer">
+<div class="web-container">
+
+  <table width="938" border="0" cellpadding="0" cellspacing="0" style="height: 625px;">
+    <tr>
+      <td height="625" class="background-moc">
+        <table width="100%" border="0" cellspacing="0" cellpadding="0" class="soc_ngang">
+          <tr>
+            <td width="90%" height="224" valign="middle" align="right" style="padding-right: 15px;">
+              <table border="0" align="center" cellpadding="0" cellspacing="0" style="padding-top: 80px;">
+                <tr>
+                  <td>
+                    <img src="IMAGES/tem1a.jpg" width="70" height="90" />
+                    <img src="IMAGES/tem1b.jpg" width="70" height="90" />
+                    <img src="IMAGES/tem1d.jpg" width="70" height="90" />
+                    <img src="IMAGES/tem1e.jpg" width="70" height="90" />
+                  </td>
+                </tr>
+              </table>
+            </td>
+            <td width="10%" class="mmau1" valign="middle" style="padding-left: 10px;">&nbsp;</td>
+          </tr>
+          <tr>
+            <td height="52" colspan="2" align="center" valign="middle">
+              <a href="#" style="text-decoration:none; color:blue; font-weight:bold;">TRANG CHỦ</a> | 
+              <a href="#" style="text-decoration:none; color:blue; font-weight:bold;">SƯU TẬP</a> | 
+              <a href="#" style="text-decoration:none; color:blue; font-weight:bold;">CLB</a>
+            </td>
+          </tr>
+        </table>
+      </td>
+
+      
+      <td class="right-panel">
+        <table width="80%" border="0" align="center" cellpadding="0" cellspacing="0">
+          <tr>
+            <!-- ĐÃ SỬA: Giảm height xuống 50 và thêm padding-top để đẩy ảnh chữ dịch xuống dưới vừa vặn -->
+            <td height="50" align="center" style="padding-top: 25px;"><img src="IMAGES/lich_su.jpg" width="256" height="65" /></td>
+          </tr>
+          <tr>
+            <td height="179">Năm 1838, Ông Rowland Hill,<br /> giám đốc Bưu điện Anh quốc đã đệ trình<br />Quốc hội Anh để án phát hành tem <br />dán lên phong bì để giải quyết vấn đề thu<br /> cước phí. Đầu năm 1840, <br />đề án này được thông qua và ngày 6/5/1840,<br /> con tem đầu tiên in hình nữ hòang<br /> Victoria, gía “1 penny”ra đời.</td>
+          </tr>
+          <tr>
+            <td height="210" valign="top">
+              <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                  <td height="210" align="center" valign="middle"><img src="IMAGES/condau1.gif" width="191" height="196" /></td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
         
-        <!-- Con tem lơ lửng chuyển động dọc vách ngăn giữa -->
-        <img src="IMAGES/ngay2.gif" class="falling-stamp" alt="Con tem trôi">
+        <table width="100%" border="0" cellspacing="0" cellpadding="0" style="margin-top: 30px;">
+          <tr>
 
-        <!-- Khung bên trái -->
-        <div class="left-panel">
-			<div class="orange-line-1"></div>
-            <div class="decor-lines"></div>
-            <div class="blue-bottom-line"></div>
-            <div class="color-bar"></div>
+            <td class="vien-cham-tron"><strong>NHÓM . MULTIMEDIA . SƯU . TẬP</strong></td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
 
-            <!-- Dãy hàng tem minh họa -->
-            <div class="stamps-row">
-                <img src="IMAGES/tem1a.jpg" class="stamp-item hover-target" alt="Tem 1">
-                <img src="IMAGES/tem1b.jpg" class="stamp-item hover-target" alt="Tem 2">
-                <img src="IMAGES/tem1d.jpg" class="stamp-item hover-target" alt="Tem 3">
-                <img src="IMAGES/tem1e.jpg" class="stamp-item hover-target" alt="Tem 4">
-                <img src="IMAGES/tem1f.gif" class="stamp-item hover-target stamp-rotated" alt="Tem 5">
-            </div>
+  <div class="gold-stamp-position">
+    <img class="drop-animation" src="IMAGES/ngay2.gif" width="107" height="86" alt="Tem vàng" />
+  </div>
 
-            <!-- Nút điều hướng góc dưới -->
-            <div class="nav-links">
-                <a href="#">TRANG CHỦ</a> | <a href="#">SƯU TẬP</a> | <a href="#">CLB</a>
-            </div>
-        </div>
+  <div class="fixed-stamp-position">
+    <img src="IMAGES/tem1f.gif" width="114" height="114" alt="Tem nghiêng" />
+  </div>
 
-        <!-- Khung bên phải -->
-        <div class="right-panel">
-            <div class="title-container">
-                <img src="IMAGES/lich_su.jpg" class="title-img" alt="Con tem có từ khi nào?">
-            </div>
+</div>
 
-            <div class="content-text" style="text-align: center">
-                Năm 1838, Ông Rowland Hill, giám đốc Bưu điện Anh quốc đã đệ trình Quốc hội Anh đề án phát hành tem dán lên phong bì để giải quyết vấn đề thu cước phí. Đầu năm 1840, đề án này được thông qua và ngày 6/5/1840, con tem đầu tiên in hình nữ hoàng Victoria, giá "1 penny" ra đời.
-            </div>
-
-            <div class="condau-container">
-                <img src="IMAGES/condau1.gif" class="condau-img" alt="Hội nghị cấp cao tem thư">
-            </div>
-
-          <div class="bottom-frame">
-                <div class="bottom-border-text">NHÓM . MULTIMEDIA . SƯU  TẬP</div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Tooltip thông báo nhỏ xuất hiện khi hover chuột vào tem -->
-    <div id="tooltipBox" style="position: absolute; background: #fff; color: red; border: 1px solid red; padding: 2px 5px; font-size: 11px; display: none; z-index: 999; pointer-events: none;">Tem đang được bán</div>
-
-    <script>
-        const stamps = document.querySelectorAll('.hover-target');
-        const tooltip = document.getElementById('tooltipBox');
-
-        stamps.forEach(stamp => {
-            stamp.addEventListener('mousemove', (e) => {
-                tooltip.style.display = 'block';
-                tooltip.style.left = (e.pageX + 10) + 'px';
-                tooltip.style.top = (e.pageY + 10) + 'px';
-            });
-            stamp.addEventListener('mouseout', () => {
-                tooltip.style.display = 'none';
-            });
-        });
-    </script>
 </body>
 </html>
