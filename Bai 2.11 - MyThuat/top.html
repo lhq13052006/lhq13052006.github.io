@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body { 
+            margin: 0; 
+            padding: 0; 
+            background-color: #d1ab82; 
+            display: flex;
+            height: 120px;
+            overflow: hidden;
+        }
+
+        .top-left-buttons {
+    width: 260px;
+    height: 120px;
+    display: flex;
+    align-items: flex-start; 
+    justify-content: center;
+    gap: 0;                  
+    flex-shrink: 0;
+    background-color: #d1ab82;
+}
+
+.top-left-buttons img {
+    height: 90px;           
+    width: auto;
+    display: block;
+    border: 0;
+}
+        .marquee-container { 
+            flex: 1;
+            height: 120px;
+            background-color: #FFFFFF;
+            background-image: url('images/nen2.gif');
+            background-repeat: repeat-y;
+            background-position: left top;
+            padding-left: 30px; 
+            overflow: hidden;
+        }
+
+        marquee { 
+            width: 100%; 
+            height: 120px; 
+            line-height: 120px;
+        }
+
+        marquee img { 
+            height: 100px; 
+            display: inline-block; 
+            vertical-align: middle; 
+            margin-right: -4px; 
+        }
+    </style>
+</head>
+<body>
+
+    <div class="top-left-buttons">
+        <a href="index.html" target="_top"><img src="images/trangchu.gif" alt="Trang chủ" /></a>
+        <a href="tintuc.html" target="mainFrame"><img src="images/tintuc.gif" alt="Tin tức" /></a>
+    </div>
+
+    <div class="marquee-container">
+        <marquee id="banner" behavior="scroll" direction="left" scrollamount="5"
+                 onclick="this.stop()" 
+                 ondblclick="this.start()" 
+                 onmouseover="this.direction='right'; this.start();" 
+         onmouseout="this.direction='left'; this.start();">
+            <img src="images/m1.jpg" /><img src="images/m2.jpg" /><img src="images/m3.jpg" /><img src="images/m4.jpg" /><img src="images/m5.jpg" /><img src="images/m6.jpg" /><img src="images/m1.jpg" /><img src="images/m2.jpg" /><img src="images/m3.jpg" /><img src="images/m4.jpg" /><img src="images/m5.jpg" /><img src="images/m6.jpg" /><img src="images/m1.jpg" /><img src="images/m2.jpg" /><img src="images/m3.jpg" /><img src="images/m4.jpg" /><img src="images/m5.jpg" /><img src="images/m6.jpg" />
+        </marquee>
+    </div>
+
+</body>
+</html>

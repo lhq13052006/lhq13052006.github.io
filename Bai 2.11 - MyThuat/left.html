@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Khung Trái</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background-color: #d1ab82;
+            padding-top: 25px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            overflow-x: hidden;
+        }
+
+.menu-container {
+    width: 210px;           
+    display: flex;
+    flex-direction: column;
+    gap: 0;                 
+    margin-top: 50px;    
+    margin-bottom: 30px;    
+    margin-left: auto;      
+    margin-right: auto;    
+    align-self: center;  
+}
+
+.dropdown {
+    position: relative;
+    width: 100%;
+    line-height: 0;        
+    margin: 0;
+    padding: 0;
+}
+
+.dropdown > a {
+    display: block;
+    width: 100%;
+    text-decoration: none;
+    line-height: 0;
+}
+
+.dropdown img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #f9e4c8;
+    border: 1px solid #8c6239;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+    z-index: 100;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a {
+    color: #4a2c11;
+    padding: 6px 10px;
+    text-decoration: none;
+    display: block;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: normal;    
+    border-bottom: 1px dashed #d1ab82;
+}
+
+.dropdown-content a:hover {
+    background-color: #d1ab82;
+    color: #000;
+}
+
+
+.gallery-container {
+    position: relative;
+    width: 230px;
+    height: 480px;
+    margin: 0 auto;
+}
+
+.gallery-container img {
+    position: absolute;
+    box-sizing: border-box;
+    object-fit: cover;
+    cursor: pointer;
+    transition: transform 0.15s ease;
+}
+
+.gallery-container img:hover {
+    z-index: 99 !important;
+    outline: 2px solid #fff;
+    transform: scale(1.02);
+}
+
+.img-1 {
+    top: 25px;
+    left: 55px;
+    width: 165px;
+    height: 185px;
+    z-index: 1;
+}
+
+.img-2 {
+    top: 75px;
+    left: 5px;
+    width: 48px;
+    height: 165px;
+    z-index: 2;
+}
+
+.img-3 {
+    top: 120px;
+    left: 18px;
+    width: 195px;
+    height: 140px;
+    z-index: 3;
+}
+
+.img-4 {
+    top: 250px;
+    left: 12px;
+    width: 145px;
+    height: 85px;
+    border: 3px solid #000;
+    z-index: 4;
+}
+
+.img-5 {
+    top: 280px;
+    left: 120px;
+    width: 95px;
+    height: 175px;
+    z-index: 5;
+}
+    </style>
+</head>
+<body>
+
+    <div class="menu-container">
+    
+    <!-- [Danh Họa VN] -->
+    <div class="dropdown">
+        <a href="#"><img src="images/danh_hoa.gif" alt="Danh Họa Việt Nam" /></a>
+        <div class="dropdown-content">
+            <a href="#">Nguyễn Phan Chánh</a>
+            <a href="#">Trường Hán Minh</a>
+        </div>
+    </div>
+
+    <!-- [Tranh Dân Gian] -->
+    <div class="dropdown">
+        <a href="#"><img src="images/tranh_dan_gian.gif" alt="Tranh Dân Gian" /></a>
+        <div class="dropdown-content">
+            <a href="#">Tranh Đông Hồ</a>
+            <a href="#">Tranh Hàng Trống</a>
+            <a href="#">Tranh Thờ Miền Núi</a>
+        </div>
+    </div>
+
+</div>
+
+    </div>
+
+    <div class="gallery-container">
+        <img src="images/h3.jpg" class="img-1" alt="Tranh 1">
+        <img src="images/h1.jpg" class="img-2" alt="Tranh 2">
+        <img src="images/h2.jpg" class="img-3" alt="Tranh 3">
+        <img src="images/h5.jpg" class="img-4" alt="Tranh 4">
+        <img src="images/h6.jpg" class="img-5" alt="Tranh 5">
+    </div>
+
+</body>
+</html>
